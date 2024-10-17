@@ -138,14 +138,17 @@
 .blogArticle {
   padding: 0 20px;
 }
-/* .blogArticle img {
+.blogArticle img {
   height: 260px;
   max-height: 22vh;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   filter: grayscale(1);
-} */
+}
+.blogArticle img:hover {
+  filter: none;
+}
 .blogArticle video {
   height: 260px;
   max-height: 22vh;

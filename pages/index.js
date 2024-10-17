@@ -117,7 +117,8 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.blogArticle}>
-              <video src="/films/shop.mp4" autoPlay muted loop />
+              <img src="/images/shop.png" alt="E-store" />
+              {/* <video src="/films/shop.mp4" autoPlay muted loop /> */}
               <h2>
                 The final project of my front-end trainee is{' '}
                 <span>Digital Shop</span> .
@@ -160,7 +161,8 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.blogArticle}>
-              <video src="/films/hairdresser.mp4" autoPlay muted loop />
+            <img src="/images/hairdresser.png" alt="hairdresser" />
+              {/* <video src="/films/hairdresser.mp4" autoPlay muted loop /> */}
               <h2>
                 This page&apos;s name is <span>Hairdresser Anny</span> .
               </h2>
@@ -203,7 +205,8 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.blogArticle}>
-              <video src="/films/landing-page.mp4" autoPlay muted loop />
+            <img src="/images/landing-page.png" alt="landing-page" />
+              {/* <video src="/films/landing-page.mp4" autoPlay muted loop /> */}
               <h2>
                 The <span>flower shop</span> and <span>furniture store</span>{' '}
                 are my landing page practice.

@@ -1,37 +1,34 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-}
-
 * {
+  outline: none;
   box-sizing: border-box;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+html {
+  /* box-sizing: border-box; */
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
   max-width: 100%;
-  display: block;
+}
+
+body {
+  background-color: #ad9676;
+  display: flex;
+  font-family: "Inter", sans-serif;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2em;
+  font-weight: 400;
+  height: 100vh;
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+.today {
+  font-weight: bold;
 }

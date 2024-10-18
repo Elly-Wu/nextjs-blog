@@ -26,11 +26,11 @@ export default function Calendar() {
   const getFirstDayOfMonth = (year, month) => {
     return new Date(year, month, 1).getDay()
   }
-  // 取得今天的日期，用於比對生成日曆時標記當天
+  // 取得今天的日期，用於比對生成日曆時標記當天, 用 UTC 時間來避免時區誤差
   const today = new Date()
-  const todayYear = today.getFullYear()
-  const todayMonth = today.getMonth()
-  const todayDate = today.getDate()
+  const todayYear = today.getUTCFullYear()
+  const todayMonth = today.getUTCMonth()
+  const todayDate = today.getUTCDate()
   // 生成日曆格子，包括日期格子和前置的空白格子
   const generateCalendar = () => {
     const daysInMonth = getDaysInMonth(thisYear, thisMonth) // 獲取當前月份的總天數

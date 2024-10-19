@@ -122,7 +122,7 @@ export default function Home() {
             <div className={styles.blogArticle}>
               <ShopSwiper />
               <h2>
-                The final project of my front-end trainee is{' '}
+                The final project of my front-end training is{' '}
                 <span>Digital Shop</span> .
               </h2>
               <div className={styles.blogDetail}>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
-import Calendar from '../components/calendar';
+// import Calendar from '../components/calendar';
 import ShopSwiper from '../components/swipers/shop';
 import HairdresserSwiper from '../components/swipers/hairdresser';
 import LandingSwiper from '../components/swipers/landing';
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
           </div>
           <div className={`${styles.blogArticle} ${styles.pageNumber}`}>
-            <Calendar />
+            {/* <Calendar /> */}
             {error ? (
               <div>{error}</div>
             ) : weatherDescription && temperature ? (

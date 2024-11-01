@@ -8,6 +8,7 @@ import HairdresserSwiper from '../components/swipers/hairdresser';
 import LandingSwiper from '../components/swipers/landing';
 import styles from '../styles/style.module.css';
 import { getSortedPostsData } from '../lib/posts';
+import Swal from 'sweetalert2';
 // import Link from 'next/link';
 // import Date from '../components/date';
 
@@ -20,26 +21,54 @@ export default function Home() {
   useEffect(() => {
     // 使用瀏覽器的 Geolocation API 獲取使用者位置
     const getLocation = () => {
-      if (navigator.geolocation) {
-        // 如果瀏覽器支援 geolocation，嘗試獲取使用者位置
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            // 可以在此使用 position.coords.latitude 和 position.coords.longitude 查詢天氣 API，進一步使用經緯度來查詢天氣資料
-          },
-          (error) => {
-            // 若獲取位置失敗，判斷錯誤代碼來決定錯誤訊息
-            if (error.code === 1) {
-              setError('使用者已拒絕存取位置。')
-            } else {
-              // 其他情況下的錯誤
-              setError('無法獲取位置資訊')
-            }
+      Swal.fire({
+        title: "Would you like to provide location information?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Yes",
+        cancelButtonText: "No"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                // 使用 position.coords.latitude 和 position.coords.longitude 查詢天氣 API
+              },
+              (error) => {
+                if (error.code === 1) {
+                  setError('denied');
+                } else {
+                  setError('unable');
+                }
+              }
+            );
+          } else {
+            setError('not support');
           }
-        )
-      } else {
-        // 當瀏覽器不支援 geolocation 時，設置錯誤訊息
-        setError('瀏覽器不支援地理位置')
-      }
+        } else {
+          setError('denied');
+        }
+      });
+      // if (navigator.geolocation) {
+      //   // 如果瀏覽器支援 geolocation，嘗試獲取使用者位置
+      //   navigator.geolocation.getCurrentPosition(
+      //     (position) => {
+      //       // 可以在此使用 position.coords.latitude 和 position.coords.longitude 查詢天氣 API，進一步使用經緯度來查詢天氣資料
+      //     },
+      //     (error) => {
+      //       // 若獲取位置失敗，判斷錯誤代碼來決定錯誤訊息
+      //       if (error.code === 1) {
+      //         setError('reject1')
+      //       } else {
+      //         // 其他情況下的錯誤
+      //         setError('unable1')
+      //       }
+      //     }
+      //   )
+      // } else {
+      //   // 當瀏覽器不支援 geolocation 時，設置錯誤訊息
+      //   setError('not support')
+      // }
     }
 
     // 使用 OpenWeather API 取得天氣資料
@@ -68,11 +97,11 @@ export default function Home() {
           setTemperature(`${temp}°C`)
         } else {
           // 如果無法找到指定地點的天氣資料，設置錯誤訊息
-          setError('無法取得指定地點的天氣資料')
+          setError('unable2')
         }
       } catch (error) {
         // 如果發生任何錯誤，設置錯誤訊息
-        setError('無法取得天氣資料')
+        setError('unable3')
       }
     }
 
@@ -105,7 +134,7 @@ export default function Home() {
                 <div>{temperature}</div>
               </>
             ) : (
-              '載入中...'
+              'Loading...'
             )}
           </div>
         </div>
@@ -140,9 +169,9 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="feather feather-corner-down-right"
                   viewBox="0 0 24 24"
                 >
@@ -183,9 +212,9 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="feather feather-corner-down-right"
                   viewBox="0 0 24 24"
                 >
@@ -224,9 +253,9 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="feather feather-corner-down-right"
                   viewBox="0 0 24 24"
                 >
@@ -241,7 +270,7 @@ export default function Home() {
         <div className={`${styles.blogPart} ${styles.rightBlog}`}>
           <div className="marqueeContainer">
             <div className="marquee">
-              <span>Hey guys, Welcome to my page.</span>
+              <span>Hi there, Welcome to my page.</span>
               <span>I will keep updating my work here!</span>
               <span>I am inspired by the Daily Prophet.</span>
             </div>
@@ -330,7 +359,7 @@ export default function Home() {
               <div className={styles.circleSubtitle}>
                 https://github.com/Elly-Wu
               </div>
-              <div className={styles.circleFooter}>+886 986 745 906</div>
+              {/* <div className={styles.circleFooter}></div> */}
             </div>
           </div>
         </div>

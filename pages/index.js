@@ -22,7 +22,7 @@ export default function Home() {
     // 使用瀏覽器的 Geolocation API 獲取使用者位置
     const getLocation = () => {
       Swal.fire({
-        title: "Would you like to provide location information?",
+        title: "Would you like to get weather information?",
         icon: "question",
         showCancelButton: true,
         confirmButtonText: "Yes",

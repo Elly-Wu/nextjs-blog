@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 // import Calendar from '../components/calendar';
 import ShopSwiper from '../components/swipers/shop';
+import BiSwiper from '../components/swipers/bi';
 import HairdresserSwiper from '../components/swipers/hairdresser';
 import LandingSwiper from '../components/swipers/landing';
 import styles from '../styles/style.module.css';
@@ -141,11 +142,11 @@ export default function Home() {
         <div className={styles.blogHeaderContainer}>
           <div className={styles.blogHeader}>
             <div className={`${styles.blogArticle} ${styles.headerArticle}`}>
-              <div className={styles.blogBigTitle}>E-store</div>
+              <div className={styles.blogBigTitle}>Project</div>
               <div
                 className={`${styles.blogMenu} ${styles.smallTitle} ${styles.date}`}
               >
-                08.02.2024
+                11.07.2024
               </div>
             </div>
             <div className={styles.blogArticle}>
@@ -159,12 +160,51 @@ export default function Home() {
                 <span>MySQL</span>
               </div>
               <p>
-                We took a reference from several e-stores. One of my tasks is
-                setting up an all-products page that can be scrolled infinitely.
-                Then I created the release functionality for the product and the
-                comment system.
+              My tasks include setting up two versions of the all-products page. One has infinite scrolling, and the other allows for searching by product name and sorting by price. I also created the release functionality for products and developed the comment system.
               </p>
               <a href="https://github.com/Elly-Wu/e-store" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="feather feather-corner-down-right"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 10l5 5-5 5" />
+                  <path d="M4 4v7a4 4 0 004 4h12" />
+                </svg>
+                See More
+              </a>
+            </div>
+          </div>
+          <div className={styles.blogHeader}>
+            <div className={`${styles.blogArticle} ${styles.headerArticle}`}>
+              <div className={styles.blogBigTitle}>B/ I</div>
+              <div
+                className={`${styles.blogMenu} ${styles.smallTitle} ${styles.date}`}
+              >
+                11.07.2024
+              </div>
+            </div>
+            <div className={styles.blogArticle}>
+            <BiSwiper />
+              <h2>
+              This is the <span>admin interface</span> for an online store.
+              </h2>
+              <div className={styles.blogDetail}>
+                <span>PHP</span>
+                <span>MySQL/ phpMyAdmin</span>
+              </div>
+              <p>
+              My tasks for the project include setting up the activity theme list and adding functionalities to add, edit, and delete activity theme items.
+              </p>
+              <a
+                href="https://elly-wu.github.io/Hairdresser-Anny/index.html"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

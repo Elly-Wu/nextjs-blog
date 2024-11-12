@@ -7,6 +7,7 @@ export default function ShopSwiper() {
     'images/shop2.png',
     'images/shop3.png',
     'images/shop4.png',
+    'images/shop5.png',
   ]
 
   useEffect(() => {

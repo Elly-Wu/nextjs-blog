@@ -202,7 +202,7 @@ export default function Home() {
               My tasks for the project include setting up the activity theme list and adding functionalities to add, edit, and delete activity theme items.
               </p>
               <a
-                href="https://elly-wu.github.io/Hairdresser-Anny/index.html"
+                href="https://github.com/Elly-Wu/admin-interface"
                 target="_blank"
               >
                 <svg
